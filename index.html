@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entre Cumbres · Trekking en Catamarca</title>
+<meta name="description" content="Trekking, ascensos y salidas personalizadas por las montañas de Catamarca.">
+<meta property="og:title" content="Entre Cumbres · Trekking en Catamarca">
+<meta property="og:description" content="Trekking, ascensos y salidas personalizadas por las montañas de Catamarca.">
+<meta property="og:image" content="fotos/casa-de-piedra-cueva.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f4ef;
+    --paper:#ffffff;
+    --ink:#262a26;
+    --muted:#6f726b;
+    --line:#e3dfd6;
+    --accent:#5e6e58;
+    --accent-dark:#4a5845;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:400;line-height:1.1;letter-spacing:-.01em}
+  .label{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--accent)}
+  section{padding:100px 0}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;transition:background .2s}
+  .btn:hover{background:var(--accent-dark)}
+  .btn svg{width:18px;height:18px;fill:currentColor}
+  .btn-light{background:#fff;color:var(--ink)}
+  .btn-light:hover{background:var(--bg)}
+
+  /* Nav */
+  nav{position:absolute;inset:0 0 auto;z-index:10}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:76px;color:#fff}
+  .logo{font-family:Fraunces,serif;font-size:1.3rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .logo svg{width:28px;height:28px}
+  nav a.cta{font-size:.9rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.5);padding:8px 18px;border-radius:999px}
+  nav a.cta:hover{background:rgba(255,255,255,.15)}
+
+  /* Hero */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:#2b2d29 url(fotos/casa-de-piedra-cueva.jpg) center 55%/cover}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,22,20,.45) 0%,rgba(20,22,20,.1) 35%,rgba(20,22,20,.65) 100%)}
+  .hero .wrap{position:relative;width:100%;padding-bottom:90px}
+  .hero .label{color:rgba(255,255,255,.85)}
+  .hero h1{font-size:clamp(2.6rem,6.5vw,5rem);max-width:13ch;margin:14px 0 18px}
+  .hero p{max-width:480px;font-size:1.1rem;color:rgba(255,255,255,.9);margin-bottom:30px}
+
+  /* Intro */
+  .intro{text-align:center}
+  .intro h2{font-size:clamp(1.8rem,3.6vw,2.6rem);max-width:22ch;margin:16px auto 0}
+
+  /* Salidas */
+  .types{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:56px}
+  .type{background:var(--paper);padding:34px 30px}
+  .type h3{font-size:1.45rem;margin-bottom:8px}
+  .type p{color:var(--muted);font-size:.97rem}
+  @media(max-width:800px){.types{grid-template-columns:1fr}}
+
+  /* Lugares */
+  .places-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+  .places-head h2{font-size:clamp(2rem,4vw,3rem);margin-top:12px}
+  .places-head p{color:var(--muted);max-width:360px}
+  .places{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .place{background:var(--paper);border-radius:16px;overflow:hidden}
+  .place .img{aspect-ratio:4/5;overflow:hidden}
+  .place img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .place:hover img{transform:scale(1.04)}
+  .place .txt{padding:22px 24px 26px}
+  .place h3{font-size:1.35rem;margin-bottom:6px}
+  .place p{color:var(--muted);font-size:.94rem}
+  .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .meta span{font-size:.78rem;font-weight:600;color:var(--accent-dark);background:#eef0ea;padding:4px 10px;border-radius:999px}
+  @media(max-width:900px){.places{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.places{grid-template-columns:1fr}}
+
+  /* Wide photo */
+  .wide{max-width:1052px;margin:0 auto;height:min(60vh,460px);border-radius:16px;background:url(fotos/valle-verde.jpg) center/cover}
+  @media(max-width:1100px){.wide{margin:0 24px}}
+
+  /* Sobre mí */
+  .about .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+  .about-imgs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .about-imgs img{border-radius:14px;width:100%;aspect-ratio:3/4;object-fit:cover}
+  .about-imgs img:last-child{margin-top:48px}
+  .about h2{font-size:clamp(2rem,4vw,2.8rem);margin:12px 0 20px}
+  .about p{color:var(--muted);margin-bottom:14px;font-size:1.03rem}
+  .about blockquote{font-family:Fraunces,serif;font-size:1.3rem;line-height:1.4;border-left:2px solid var(--accent);padding-left:18px;margin-top:26px;color:var(--ink)}
+  @media(max-width:860px){.about .wrap{grid-template-columns:1fr;gap:44px}}
+
+  /* Cómo */
+  .how{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .how h2{font-size:clamp(1.9rem,3.6vw,2.6rem);text-align:center;margin:12px 0 50px}
+  .how .label{display:block;text-align:center}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:900px;margin:0 auto}
+  .step b{font-family:Fraunces,serif;font-weight:400;font-size:2rem;color:var(--accent)}
+  .step h3{font-size:1.2rem;margin:6px 0}
+  .step p{color:var(--muted);font-size:.95rem}
+  @media(max-width:760px){.steps{grid-template-columns:1fr;gap:28px}}
+
+  /* Final */
+  .final{position:relative;color:#fff;text-align:center;padding:120px 0;background:var(--accent-dark)}
+  .final .wrap{position:relative}
+  .final h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:14px}
+  .final p{color:rgba(255,255,255,.9);margin-bottom:30px}
+
+  footer{padding:32px 0;font-size:.9rem;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{text-decoration:none}
+  footer a:hover{color:var(--ink)}
+
+  .float{position:fixed;right:20px;bottom:20px;z-index:20;width:56px;height:56px;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+  .float svg{width:26px;height:26px;fill:#fff}
+
+  .fade{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .fade.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 1.9 17.7L.3 23.7l6.2-1.6A11.8 11.8 0 0 0 23.8 12c0-3.2-1.2-6.2-3.3-8.5ZM12 21.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.6Zm5.4-7.3c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.2c-.2.2-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.7.7.6-.1 1.8-.7 2-1.5.3-.7.3-1.3.2-1.5l-.8-.4Z"/></symbol>
+</svg>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M2 26 12 10l5 8 3-4 10 12Z"/><path d="m12 10 2.5 4-2.5-1-2 2"/></svg>
+      Entre Cumbres
+    </a>
+    <a href="#reservar" class="cta">Reservar</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="label">Experiencias de montaña · Catamarca</span>
+    <h1>Conocé Catamarca desde arriba</h1>
+    <p>Trekking, ascensos y salidas personalizadas para que descubras los paisajes de la provincia caminando.</p>
+    <a class="btn btn-light" href="https://wa.me/543834001122?text=Hola!%20Quiero%20info%20sobre%20las%20pr%C3%B3ximas%20salidas" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Quiero sumarme</a>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="wrap fade">
+    <span class="label">Qué hacemos</span>
+    <h2>Salidas a la montaña para conectar con la naturaleza, con el grupo y con uno mismo.</h2>
+    <div class="types">
+      <div class="type"><h3>Trekking</h3><p>Caminatas de medio día o jornada completa. Ideales para tu primera experiencia en la montaña.</p></div>
+      <div class="type"><h3>Ascensos</h3><p>Para los que quieren llegar a la cumbre y llevarse la mejor vista de la provincia.</p></div>
+      <div class="type"><h3>Personalizadas</h3><p>Salidas a medida para tu grupo de amigos, familia o equipo, en la fecha que elijas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="places-head fade">
+      <div><span class="label">Lugares</span><h2>Algunas de nuestras salidas</h2></div>
+      <p>Senderos cerca de la capital con vistas que no te imaginás. Consultá por las próximas fechas.</p>
+    </div>
+    <div class="places">
+      <article class="place fade">
+        <div class="img"><img src="fotos/casa-de-piedra-cueva.jpg" alt="Vista del valle desde la Casa de Piedra" loading="lazy"></div>
+        <div class="txt"><h3>Casa de Piedra</h3><p>En Fray Mamerto Esquiú. Una cueva de roca con una vista espectacular de todo el valle.</p><div class="meta"><span>960 m</span><span>Ideal para empezar</span></div></div>
+      </article>
+      <article class="place fade">
+        <div class="img"><img src="fotos/gracian.jpg" alt="Vista del dique Las Pirquitas desde El Gracián" loading="lazy"></div>
+        <div class="txt"><h3>El Gracián</h3><p>Una subida exigente con una vista increíble del dique Las Pirquitas desde arriba.</p><div class="meta"><span>Medio / difícil</span><span>780 m de desnivel</span><span>5–6 h</span></div></div>
+      </article>
+      <article class="place fade">
+        <div class="img"><img src="fotos/fray-arco.jpg" alt="Arco de piedra en un sendero de Fray Mamerto Esquiú" loading="lazy"></div>
+        <div class="txt"><h3>Senderos de Fray</h3><p>Arcos de piedra, monte nativo y caminos entre las sierras para un finde al aire libre.</p><div class="meta"><span>Medio día</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="wide" role="img" aria-label="Quebradas verdes de montaña en Catamarca"></div>
+
+<section class="about">
+  <div class="wrap">
+    <div class="about-imgs fade">
+      <img src="fotos/rodri.jpg" alt="Rodri con su mochila en la montaña" loading="lazy">
+      <img src="fotos/rodri-cumbre.jpg" alt="Rodri en un ascenso" loading="lazy">
+    </div>
+    <div class="fade">
+      <span class="label">Quién te acompaña</span>
+      <h2>Hola, soy Rodri</h2>
+      <p>Nací en Catamarca y soy un apasionado de la vida al aire libre. Practico escalada en roca, slackline y MTB desde muy chico, y hoy me estoy formando como guía de trekking profesional.</p>
+      <p>Creé Entre Cumbres para acercar a las personas a la naturaleza a través de experiencias genuinas y compartidas.</p>
+      <blockquote>“Entre Cumbres es estar en medio de la montaña, recorriendo y viviendo el lugar.”</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="reservar">
+  <div class="wrap">
+    <span class="label">Cómo sumarte</span>
+    <h2>Reservar es muy simple</h2>
+    <div class="steps">
+      <div class="step fade"><b>01</b><h3>Escribime</h3><p>Mandame un WhatsApp y contame qué salida te interesa.</p></div>
+      <div class="step fade"><b>02</b><h3>Te paso la info</h3><p>Fecha, punto de encuentro, dificultad y qué llevar.</p></div>
+      <div class="step fade"><b>03</b><h3>Salimos a caminar</h3><p>Vos traé las ganas, del resto me encargo yo.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:50px">
+      <a class="btn" href="https://wa.me/543834001122?text=Hola!%20Quiero%20reservar%20una%20salida" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Escribir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap fade">
+    <h2>¿Nos vemos entre cumbres?</h2>
+    <p>Sumate a la próxima salida y viví la montaña de cerca.</p>
+    <a class="btn btn-light" href="https://wa.me/543834001122?text=Hola!%20Quiero%20info%20sobre%20las%20pr%C3%B3ximas%20salidas" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>383 400-1122</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Entre Cumbres · Catamarca, Argentina</span>
+    <span><a href="https://www.instagram.com/entre__cumbres/" target="_blank" rel="noopener">Instagram @entre__cumbres</a></span>
+  </div>
+</footer>
+
+<a class="float" href="https://wa.me/543834001122" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#wa"/></svg></a>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: .15 });
+  document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
